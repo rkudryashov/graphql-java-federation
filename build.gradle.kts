@@ -2,7 +2,8 @@ import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 
 group = "io.gqljf"
-version = "0.1.5"
+// todo set up plugin
+version = "0.1.10"
 
 plugins {
     `java-library`
@@ -90,8 +91,8 @@ publishing {
 }
 
 bintray {
-    user = System.getProperty("bintrayUser")
-    key = System.getProperty("bintrayKey")
+    user = System.getenv("BINTRAY_USER")
+    key = System.getenv("BINTRAY_KEY")
     publish = true
     setPublications("lib")
     pkg.apply {

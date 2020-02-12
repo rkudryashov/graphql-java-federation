@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/github/license/rkudryashov/graphql-java-federation.svg)](LICENSE)
 [![Download](https://api.bintray.com/packages/gqljf/maven/graphql-java-federation/images/download.svg)](https://bintray.com/gqljf/maven/graphql-java-federation/_latestVersion)
-[![TravisCI](https://travis-ci.com/rkudryashov/graphql-java-federation.svg)](https://travis-ci.com/rkudryashov/graphql-java-federation)
+[![Java CI](https://github.com/rkudryashov/graphql-java-federation/workflows/Java%20CI/badge.svg?branch=master)](https://github.com/rkudryashov/graphql-java-federation/actions)
 
 # graphql-java federation
 
