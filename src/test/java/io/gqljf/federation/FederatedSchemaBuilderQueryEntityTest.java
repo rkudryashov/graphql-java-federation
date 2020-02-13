@@ -15,15 +15,13 @@ class FederatedSchemaBuilderQueryEntityTest extends AbstractTest {
 
     @Test
     void testQueryLongDummy() throws Exception {
-        List<FederatedEntityResolver<?, ?>> entityResolvers = List.of(
-                new FederatedEntityResolver<Long, LongEntityDummy>("LongEntityDummy", id -> new LongEntityDummy(id, "qwerty")) {
-                }
-        );
+        FederatedEntityResolver<Long, LongEntityDummy> entityResolver = new FederatedEntityResolver<>("LongEntityDummy", id -> new LongEntityDummy(id, "qwerty")) {
+        };
 
         GraphQLSchema transformed = new FederatedSchemaBuilder()
                 .schemaInputStream(getResourceAsStream("entity-schema.graphqls"))
                 .runtimeWiring(RuntimeWiring.newRuntimeWiring().build())
-                .federatedEntitiesResolvers(entityResolvers)
+                .federatedEntitiesResolvers(List.of(entityResolver))
                 .build();
 
         Map<String, Object> variables = Map.of("_representations", Map.of("__typename", "LongEntityDummy", "id", "1019"));
@@ -41,15 +39,13 @@ class FederatedSchemaBuilderQueryEntityTest extends AbstractTest {
 
     @Test
     void testQueryStringDummy() throws Exception {
-        List<FederatedEntityResolver<?, ?>> entityResolvers = List.of(
-                new FederatedEntityResolver<String, StringEntityDummy>("StringEntityDummy", id -> new StringEntityDummy(id, "101")) {
-                }
-        );
+        FederatedEntityResolver<String, StringEntityDummy> entityResolver = new FederatedEntityResolver<>("StringEntityDummy", id -> new StringEntityDummy(id, "101")) {
+        };
 
         GraphQLSchema transformed = new FederatedSchemaBuilder()
                 .schemaInputStream(getResourceAsStream("entity-schema.graphqls"))
                 .runtimeWiring(RuntimeWiring.newRuntimeWiring().build())
-                .federatedEntitiesResolvers(entityResolvers)
+                .federatedEntitiesResolvers(List.of(entityResolver))
                 .build();
 
         Map<String, Object> variables = Map.of("_representations", Map.of("__typename", "StringEntityDummy", "id", "30"));

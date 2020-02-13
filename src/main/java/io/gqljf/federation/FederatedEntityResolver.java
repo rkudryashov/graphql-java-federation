@@ -3,7 +3,7 @@ package io.gqljf.federation;
 import java.lang.reflect.ParameterizedType;
 import java.util.function.Function;
 
-// `abstract` makes it possible to store generic types
+// `abstract` makes it possible to preserve generic types
 public abstract class FederatedEntityResolver<ID, T> {
 
     private final String typeName;

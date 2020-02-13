@@ -3,7 +3,7 @@ import com.google.protobuf.gradle.protoc
 
 group = "io.gqljf"
 // todo set up plugin
-version = "0.1.10"
+version = "0.1.13"
 
 plugins {
     `java-library`
