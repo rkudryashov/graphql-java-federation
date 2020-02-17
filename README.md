@@ -8,6 +8,8 @@ Library to adapt graphql-java services to Apollo Federation spec.
 
 Required JDK version: 11+
 
+Detailed example of usage can be found here: https://github.com/rkudryashov/graphql-federation
+
 ### Dependency management with Gradle
 
 Make sure JCenter is among your repositories (Gradle Kotlin DSL is shown):
